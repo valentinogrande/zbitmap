@@ -1,0 +1,17 @@
+[package]
+name = "zbitmap"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.73"
+license = "MIT"
+description = "Pure-Rust LZBITMAP decompressor and APFS decmpfs (types 13/14) decoder"
+repository = "https://github.com/valentinogrande/zbitmap"
+documentation = "https://docs.rs/zbitmap"
+readme = "README.md"
+keywords = ["lzbitmap", "apfs", "decmpfs", "decompression", "macos"]
+categories = ["compression", "filesystem", "parsing"]
+exclude = [".github/"]
+
+[[bin]]
+name = "decmpfs-decode"
+path = "src/bin/decmpfs-decode.rs"
