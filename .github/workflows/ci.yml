@@ -12,6 +12,9 @@ jobs:
         with:
           toolchain: ${{ matrix.rust }}
           components: clippy
+      # No dependencies; old toolchains cannot parse lockfile v4.
+      - run: rm Cargo.lock
+        if: matrix.rust != 'stable'
       - run: cargo test --all-targets
       - run: cargo clippy --all-targets -- -D warnings
         if: matrix.rust == 'stable'
